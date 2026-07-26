@@ -25,7 +25,7 @@ EOF
 cat > /home/dbadmin/library_froa0019/sql_create_table.d/create_book.sql <<EOF
 CREATE TABLE book (
 isbn char(13) PRIMARY KEY,
-publisher_id serial REFERENCES pusblisher(publisher_id),
+publisher_id serial REFERENCES publisher(publisher_id),
 title varchar(255) NOT NULL,
 rental_days int NOT NULL
 );
