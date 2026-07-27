@@ -2,7 +2,7 @@
 #Program Name: insert_recordss.sh
 #Program Purpose: insert record scripts for library_froa0019
 #Date Created: 26/07/26
-#Version: 1.0.0
+#Version: 1.0.1
 #Author(s): Kaylee Froats
 
 mkdir -p /home/dbadmin/library_froa0019/sql_insert.d/
@@ -16,18 +16,18 @@ touch /home/dbadmin/library_froa0019/sql_insert.d/insert_loan.sql
 
 cat > /home/dbadmin/library_froa0019/sql_insert.d/insert_publisher.sql <<EOF
 INSERT INTO publisher (publisher, contact) VALUES
-('Viz Media', vizmedia@gmail.com),
-('IDW Publishing', idwpub@gmail.com),
-('Skybound Entertainment', skybound@gmail.com),
-('Green Spark Productions', greenspark@gmail.com),
-('Cold Forge Inc.', coldforge@gmail.com),
-('Terran Corp.', terran@gmail.com),
-('Variance Inc.', variance@gmail.com),
-('Tarn Hauser Entertainment', tarnhauser@gmail.com),
-('Lamp Light Studio', lamplight@gmail.com),
-('Overlord Inc.', overlord@gmail.com),
-('Cybertron Productions', cybertron@gmail.com),
-('Dragon LTD.', dragon@gmail.com);
+('Viz Media', 'vizmedia@gmail.com'),
+('IDW Publishing', 'idwpub@gmail.com'),
+('Skybound Entertainment', 'skybound@gmail.com'),
+('Green Spark Productions', 'greenspark@gmail.com'),
+('Cold Forge Inc.', 'coldforge@gmail.com'),
+('Terran Corp.', 'terran@gmail.com'),
+('Variance Inc.', 'variance@gmail.com'),
+('Tarn Hauser Entertainment', 'tarnhauser@gmail.com'),
+('Lamp Light Studio', 'lamplight@gmail.com'),
+('Overlord Inc.', 'overlord@gmail.com'),
+('Cybertron Productions', 'cybertron@gmail.com'),
+('Dragon LTD.', 'dragon@gmail.com');
 EOF
 
 cat > /home/dbadmin/library_froa0019/sql_insert.d/insert_book.sql <<EOF
