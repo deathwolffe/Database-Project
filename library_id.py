@@ -7,8 +7,7 @@
 
 #define imports
 import sys
-import csv
-import json
+import psycopg2
 
 
 #define constants
@@ -77,9 +76,19 @@ def delete_loan():
 ################
 # Main Program #
 ################
+
+#database connection
+try:
+    connection=psycopg2.connect(database='library_froa0019', user='library_froa0019')
+except psycopg2.DatabaseError:
+    print("Error: Connection to database not established.")
+    sys.exit(1) #early exit if DB not available
+print("Database connection established")
+#cursor setup
+cursor = connection.cursor()
+
 #declares user input variable
 menu_option = None
-
 #the loop calls show menu unless user input is q
 while menu_option != "q":
     show_menu()
@@ -102,10 +111,15 @@ while menu_option != "q":
         delete_loan()
 
     elif menu_option == "q":
-        print("quitting program...")
+        print("Quitting program...")
 
     elif menu_option == "t":
         print(get_attribute_value())
 
     else:
-        print("invalid option, try again")
+        print("Invalid option, try again")
+
+
+#Close cursor and database connection
+cursor.close()
+connection.close()
