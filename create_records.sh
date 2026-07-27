@@ -34,7 +34,7 @@ cat > /home/dbadmin/library_froa0019/sql_insert.d/insert_book.sql <<EOF
 INSERT INTO book (isbn, publisher_id, title, rental_days) VALUES
 ('isbn1', 10, 'When Wolf meets Sheep', 14),
 ('isbn2', 9, 'Can you Hear me now?', 14),
-('isbn3', 12, 'WayFinder's Guide to Eberon', 14),
+('isbn3', 12, 'WayFinders Guide to Eberon', 14),
 ('isbn4', 3, 'Transformers Skybound Collection 1', 14),
 ('isbn5', 3, 'Transformers Skybound Collection 2', 14),
 ('isbn6', 3, 'Transformers Skybound Collection 3', 14),
@@ -48,18 +48,18 @@ EOF
 
 cat > /home/dbadmin/library_froa0019/sql_insert.d/insert_book_copy.sql <<EOF
 INSERT INTO book_copy (isbn, acquisition_date) VALUES
-('isbn1', 2020-12-24),
-('isbn2', 2020-12-24),
-('isbn3', 2020-12-24),
-('isbn4', 2020-12-24),
-('isbn5', 2021-02-12),
-('isbn6', 2021-02-12),
-('isbn7', 2021-02-12),
-('isbn8', 2022-04-07),
-('isbn9', 2022-04-07),
-('isbn10', 2022-04-07),
-('isbn11', 2022-04-07),
-('isbn12', 2022-04-07);
+('isbn1', '2020-12-24'),
+('isbn2', '2020-12-24'),
+('isbn3', '2020-12-24'),
+('isbn4', '2020-12-24'),
+('isbn5', '2021-02-12'),
+('isbn6', '2021-02-12'),
+('isbn7', '2021-02-12'),
+('isbn8', '2022-04-07'),
+('isbn9', '2022-04-07'),
+('isbn10', '2022-04-07'),
+('isbn11', '2022-04-07'),
+('isbn12', '2022-04-07');
 EOF
 
 cat > /home/dbadmin/library_froa0019/sql_insert.d/insert_author.sql <<EOF
@@ -112,17 +112,17 @@ EOF
 
 cat > /home/dbadmin/library_froa0019/sql_insert.d/insert_loan.sql <<EOF
 INSERT INTO loan (copy_id, member_id, loan_date, return_date) VALUES
-(1, 6, 2023-12-01, 2023-12-15),
-(1, 6, 2023-12-15, 2023-12-29),
-(1, 6, 2023-12-29, 2024-01-12),
-(1, 6, 2024-01-12, 2024-01-26),
-(2, 9, 2023-02-04, 2023-02-07),
-(5, 11, 2023-05-21, NULL),
-(6, 9, 2026-02-18, 2026-02-18),
-(7, 6, 2023-11-5, 2023-11-15),
-(12, 3, 2023-06-01, 2023-06-07),
-(8, 1, 2025-04-23, NULL),
-(9, 2, 2025-02-12, 2026-01-01),
-(10, 10, 2024-02-14, 2024-02-24);
+(1, 6, '2023-12-01', '2023-12-15'),
+(1, 6, '2023-12-15', '2023-12-29'),
+(1, 6, '2023-12-29', '2024-01-12'),
+(1, 6, '2024-01-12', '2024-01-26'),
+(2, 9, '2023-02-04', '2023-02-07'),
+(5, 11, '2023-05-21', NULL),
+(6, 9, '2026-02-18', '2026-02-18'),
+(7, 6, '2023-11-5', '2023-11-15'),
+(12, 3, '2023-06-01', '2023-06-07'),
+(8, 1, '2025-04-23', NULL),
+(9, 2, '2025-02-12', '2026-01-01'),
+(10, 10, '2024-02-14', '2024-02-24');
 EOF
 
