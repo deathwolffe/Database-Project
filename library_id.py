@@ -34,13 +34,13 @@ def show_menu():
 # Parameter: prompt
 # Return:    user-selected menu option
 def get_menu_option():
-    return input("please input a menu option:").lower()
+    return input("please input a menu option: ").lower()
 
 # Purpose:   get a field value used in a query
 # Parameter: prompt
 # Return:    field value
 def get_attribute_value():
-    return input("please input a field value:").lower()
+    return input("please input a field value: ").lower()
 
 # Purpose:   Query all books with all attributes, including author and publisher, sorted by title
 # Parameter: cursor
@@ -77,10 +77,10 @@ AND return_date IS NULL
 # Parameter: cursor, member phone number
 # Return: member ID
 def query_member_id():
-    phone = input("please input a member's phone number:")
+    phone = input("please input a member's phone number: ")
     cursor.execute(f"SELECT member_id FROM member WHERE phone = '{phone}'")
     query = cursor.fetchone()
-    return query[0][0]
+    return query[0]
 
 # Purpose:   Display query result
 # Parameter: cursor
@@ -95,17 +95,17 @@ def display_query():
 # Return: none
 def insert_loan():
     member = query_member_id()
-    copy = input("Please input a copy to be loaned:")
-    date = date.today()
+    copy = input("Please input a copy to be loaned: ")
+    today = date.today()
     cursor.execute(f"""INSERT INTO loan (copy_id, member_id, loan_date) VALUES
-({copy}, {member}, '{date}')""")
+({copy}, {member}, '{today}')""")
 
 # Purpose:   Delete a loan
 # Parameter: cursor, loan ID
 # Return: none
 def delete_loan():
-    loan = input("Please input a loan to be deleted:")
-    cursor.execute("DELETE FROM loan WHERE loan_id = '{loan}'")
+    loan = input("Please input a loan to be deleted: ")
+    cursor.execute(f"DELETE FROM loan WHERE loan_id = {loan}")
 
 
 ################
